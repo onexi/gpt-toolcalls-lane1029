@@ -32,6 +32,7 @@ const execute = async (zodiacSign) => {
             max_tokens: 150
         });
 
+        // Clean up the generated horoscope by removing newlines
         const cleanedHoroscope = horoscope.choices[0].message.content.replace(/\n/g, ' ');
 
         // Return the generated horoscope and topic

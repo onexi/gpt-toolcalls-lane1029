@@ -7,15 +7,20 @@ const execute = async (point1, point2) => {
             throw new Error("Each point must be an array of two numbers [x, y].");
         }
 
+        // Get the x and y coordinates for each point
         const [x1, y1] = point1;
         const [x2, y2] = point2;
 
+        // Verify that the x-coordinates are different
         if (x2 === x1) {
             throw new Error("The x-coordinates of both points must be different to avoid division by zero.");
         }
 
+        // Calculate the slope and y-intercept of the line
         const m = (y2 - y1) / (x2 - x1);
         const b = y1 - m * x1;
+
+        // Construct the equation of the line
         const equation = `y = ${m}x + ${b}`;
     
         return equation;
